@@ -118,7 +118,7 @@ def load_chapters():
 
 AFTERWORD = [
     "本書為虛構。趙連城、陸雲程、常六、胡文煥、花斑豹、烏勒春及其家人皆非歷史人物；如英、王憲臣的言行亦出於虛構。",
-    "光緒三十一年，修訂法律大臣沈家本、伍廷芳奏上《刪除律例內重刑折》，奉旨將凌遲、梟首、戮屍永遠刪除，死刑至斬決而止，並廢除刺字與緣坐（謀反大逆知情者除外）。上諭見於光緒三十一年三月二十日（西曆 1905 年 4 月 24 日）起的京報；同時另有部分死刑改斬為絞等調整，書中以「至斬而止」概括其精神。書中詔文與對話皆為擬作，非原文。",
+    "光緒三十一年三月二十日（西曆 1905 年 4 月 24 日），內閣奉上諭，准伍廷芳、沈家本所奏：「嗣後凡死罪至斬決而止」，凌遲、梟首、戮屍永遠刪除，原斬決各條改絞決，緣坐「除知情者仍治罪外，餘著悉予寬免」，刺字一併革除。第一章所引詔文即節錄自此上諭。「至斬而止」一語，亦出於原詔。",
     "史料中未見對已判決、已發遣親屬如何追溯清查的明確細則。小說據此虛構了一樁舊案無人負責的處置，不代表歷史上確有此事。",
 ]
 
@@ -127,7 +127,7 @@ def generate_markdown(chapters):
     md.append("# 《至斬而止》\n")
     md.append("**全屍**\n")
     md.append("光緒三十一年，晚清司法歷史中篇小說\n")
-    md.append("> 光緒三十一年，朝廷下旨：死刑，至斬決而止。\n")
+    md.append("> 他用自己死後的身體，換一句女兒的下落。\n")
     md.append("---\n")
     md.append("## 目錄\n")
     for ch in chapters:
@@ -227,7 +227,7 @@ def update_html(chapters, template_path="至斬而止_精裝閱讀版.html"):
     html = re.sub(r'<div class="meta-col-val">\d[\d,]* 字.*?</div>', f'<div class="meta-col-val">全本</div>', html)
     html = re.sub(r'<div class="meta-col-val">v[\w.-]+</div>', '<div class="meta-col-val">v2.0-revised</div>', html)
 
-    html = re.sub(r'<div class="front-quote">.*?</div>', '<div class="front-quote">光緒三十一年，朝廷下旨：死刑，至斬決而止。</div>', html, count=1, flags=re.DOTALL)
+    html = re.sub(r'<div class="front-quote">.*?</div>', '<div class="front-quote">他用自己死後的身體，換一句女兒的下落。</div>', html, count=1, flags=re.DOTALL)
     html = re.sub(r'<div class="meta-col-label">正文字數</div>\s*<div class="meta-col-val">[^<]*</div>', '<div class="meta-col-label">體裁</div>\n                            <div class="meta-col-val">歷史中篇</div>', html)
 
     # 3. Update chapter articles
