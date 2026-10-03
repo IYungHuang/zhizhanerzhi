@@ -125,6 +125,7 @@ AFTERWORD = [
 def generate_markdown(chapters):
     md = []
     md.append("# 《至斬而止》\n")
+    md.append("**全屍**\n")
     md.append("光緒三十一年，晚清司法歷史中篇小說\n")
     md.append("> 光緒三十一年，朝廷下旨：死刑，至斬決而止。\n")
     md.append("---\n")
@@ -221,7 +222,8 @@ def update_html(chapters, template_path="至斬而止_精裝閱讀版.html"):
     html = re.sub(r'<ul class="nav-list">.*?</ul>', f'<ul class="nav-list">{nav_html}</ul>', html, flags=re.DOTALL)
 
     # 2. Update front card info
-    html = re.sub(r'<p class="front-subtitle">.*?</p>', f'<p class="front-subtitle">晚清司法歷史中篇小說</p>', html)
+    html = re.sub(r'\s*<p class="front-genre"[^>]*>.*?</p>', '', html)
+    html = re.sub(r'<p class="front-subtitle">.*?</p>', '<p class="front-subtitle">全屍</p>\n                    <p class="front-genre" style="font-size:0.85rem;letter-spacing:0.2em;opacity:0.7;margin-top:0.6rem;">晚清司法歷史中篇小說</p>', html)
     html = re.sub(r'<div class="meta-col-val">\d[\d,]* 字.*?</div>', f'<div class="meta-col-val">全本</div>', html)
     html = re.sub(r'<div class="meta-col-val">v[\w.-]+</div>', '<div class="meta-col-val">v2.0-revised</div>', html)
 
