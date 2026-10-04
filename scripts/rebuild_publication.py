@@ -14,7 +14,7 @@ CHAPTER_METAS = [
         "num": 1,
         "id": "ch01",
         "title": "第一章：硃批出閣",
-        "countdown": "倒計時 63 天",
+        "countdown": "倒計時 61 天",
         "date": "光緒三十一年三月二十日",
         "summary": "",
     },
@@ -39,7 +39,7 @@ CHAPTER_METAS = [
         "id": "ch04",
         "title": "第四章：客棧暗風",
         "countdown": "倒計時 26 天",
-        "date": "光緒三十一年四月廿六日",
+        "date": "光緒三十一年四月廿五日至廿六日",
         "summary": "",
     },
     {
